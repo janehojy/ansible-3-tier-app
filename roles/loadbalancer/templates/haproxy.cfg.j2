@@ -26,5 +26,5 @@ backend app-servers
     balance roundrobin
     option forwardfor
     {% for host in groups.apps %}
-        server {{ host }} {{ hostvars[host] }}:8080 cookie {{ host }} check
+    server {{ shortname }} {{ host }}:8080 cookie {{ shortname }} check
     {% endfor %}
